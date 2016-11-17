@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<profile name="Ryan Neufeld's - Original Prusa i3 MK2" version="2016-11-11 09:07:12" app="S3D-Software 3.1.1">
+<profile name="Ryan Neufeld's - Original Prusa i3 MK2" version="2016-11-16 21:05:52" app="S3D-Software 3.1.1">
   <baseProfile>Prusa Mendel (modified)</baseProfile>
-  <printMaterial>PLA</printMaterial>
+  <printMaterial>PET</printMaterial>
   <printQuality>NORMAL 0.2mm</printQuality>
   <printExtruders></printExtruders>
   <extruder name="Primary Extruder">
@@ -62,8 +62,8 @@
   <infillExtruder>0</infillExtruder>
   <internalInfillPattern>Rectilinear</internalInfillPattern>
   <externalInfillPattern>Rectilinear</externalInfillPattern>
-  <infillPercentage>31</infillPercentage>
-  <outlineOverlapPercentage>21</outlineOverlapPercentage>
+  <infillPercentage>10</infillPercentage>
+  <outlineOverlapPercentage>20</outlineOverlapPercentage>
   <infillExtrusionWidthPercentage>100</infillExtrusionWidthPercentage>
   <minInfillLength>2</minInfillLength>
   <infillLayerInterval>1</infillLayerInterval>
@@ -89,20 +89,20 @@
     <relayBetweenLayers>0</relayBetweenLayers>
     <relayBetweenLoops>0</relayBetweenLoops>
     <stabilizeAtStartup>1</stabilizeAtStartup>
-    <setpoint layer="1" temperature="215"/>
-    <setpoint layer="2" temperature="200"/>
+    <setpoint layer="1" temperature="240"/>
+    <setpoint layer="2" temperature="230"/>
   </temperatureController>
   <temperatureController name="Heated Bed">
     <temperatureNumber>1</temperatureNumber>
     <isHeatedBed>1</isHeatedBed>
     <relayBetweenLayers>0</relayBetweenLayers>
     <relayBetweenLoops>0</relayBetweenLoops>
-    <stabilizeAtStartup>1</stabilizeAtStartup>
-    <setpoint layer="1" temperature="55"/>
+    <stabilizeAtStartup>0</stabilizeAtStartup>
+    <setpoint layer="1" temperature="75"/>
   </temperatureController>
   <fanSpeed>
     <setpoint layer="1" speed="0"/>
-    <setpoint layer="2" speed="100"/>
+    <setpoint layer="2" speed="50"/>
   </fanSpeed>
   <blipFanToFullPower>1</blipFanToFullPower>
   <adjustSpeedForCooling>1</adjustSpeedForCooling>
@@ -143,8 +143,8 @@
   <GPXconfigOverride>r2</GPXconfigOverride>
   <baudRateOverride>250000</baudRateOverride>
   <overridePrinterModels>1</overridePrinterModels>
-  <printerModelsOverride></printerModelsOverride>
-  <startingGcode>M115 U3.0.9 ; tell the printer latest firmware varsion available,G28 W ; home all without mesh bed level,G80 ; mesh bed leveling,G1 Y-3.0 F1000.0 ; go outside printing area,G1 X60.0 E9.0  F1000.0 ; intro line,G1 X100.0 E12.5  F1000.0 ; intro line</startingGcode>
+  <printerModelsOverride>Heatbed-MK42.stl</printerModelsOverride>
+  <startingGcode>M115 U3.0.9 ; tell the printer latest firmware varsion available,M115 U3.0.9 ; tell the printer latest firmware varsion available,M301 P24.54 I2.07 D72.87,M304 P98.32 I4.04 D598.06,M104 S[extruder0_temperature] T0 ; this will take the layer 1 temperature for extruder 0,M140 S[bed1_temperature] ; this will take the layer 1 temperature for bed 0,M190 S[bed1_temperature] ; this will take the layer 1 temperature for bed 0,M109 S[extruder0_temperature] T0 ; this will take the layer 1 temperature for extruder 0,G28 W ; home all without mesh bed level,G80 ; mesh bed leveling,G1 Y-3.0 F1000.0 ; go outside printing area,G1 X60.0 E9.0 F1000.0 ; intro line,G1 X100.0 E12.5 F1000.0 ; intro line</startingGcode>
   <layerChangeGcode></layerChangeGcode>
   <retractionGcode></retractionGcode>
   <toolChangeGcode></toolChangeGcode>
@@ -169,7 +169,7 @@
   <useMinPrintHeight>0</useMinPrintHeight>
   <minPrintHeight>0</minPrintHeight>
   <useMaxPrintHeight>0</useMaxPrintHeight>
-  <maxPrintHeight>2.5</maxPrintHeight>
+  <maxPrintHeight>29</maxPrintHeight>
   <useDiaphragm>0</useDiaphragm>
   <diaphragmLayerInterval>20</diaphragmLayerInterval>
   <robustSlicing>1</robustSlicing>
@@ -215,8 +215,16 @@
     </fanSpeed>
   </autoConfigureMaterial>
   <autoConfigureMaterial name="PET">
-    <globalExtruderTemperature>240</globalExtruderTemperature>
-    <globalBedTemperature>90</globalBedTemperature>
+    <temperatureController name="Primary Extruder">
+      <temperatureNumber>0</temperatureNumber>
+      <isHeatedBed>0</isHeatedBed>
+      <relayBetweenLayers>0</relayBetweenLayers>
+      <relayBetweenLoops>0</relayBetweenLoops>
+      <stabilizeAtStartup>1</stabilizeAtStartup>
+      <setpoint layer="1" temperature="240"/>
+      <setpoint layer="2" temperature="230"/>
+    </temperatureController>
+    <globalBedTemperature>75</globalBedTemperature>
     <globalExtrusionMultiplier>1</globalExtrusionMultiplier>
     <fanSpeed>
       <setpoint layer="1" speed="0"/>
