@@ -6,17 +6,19 @@ Here you can find community sourced Simplify3d FFF profiles. These are free to u
 To setup the bed STL:
 
 Find the savedState.factory file
-    - OSX
+- OSX
 
         /Users/<your username>/Library/Application Support/Simplify3D/S3D-Software/
 
-    - Windows 10
+- Windows 10
 
         C:\Users\<your username>\AppData\Local\Simplify3D\S3D-Software\
 
-    - Linux
+- Linux
 
         ~/.local/Simplify3D/S3D-Software/
+
+
 Place the `Heatbed-MK42.stl` for the bed model you want to use in the same folder as the savedState.factory file.
 
 Export your current FFF profile
