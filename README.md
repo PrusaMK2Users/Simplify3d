@@ -29,6 +29,9 @@ If Simplify3D is open, close it.
 
 Edit the FFF file you saved above in any text editor.
 
+Look for `<overridePrinterModels>0</overridePrinterModels>` and ensure it looks like `<overridePrinterModels>1</overridePrinterModels>`. It should have value of 1.
+
+
 Look for `<printerModelsOverride></printerModelsOverride>`
 
 Replace that line with `<printerModelsOverride>Heatbed-MK42.stl</printerModelsOverride>` and save the file.
