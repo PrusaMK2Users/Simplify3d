@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
-<profile name="Ryan Neufeld's - Original Prusa i3 MK2" version="2016-11-16 21:05:52" app="S3D-Software 3.1.1">
+<profile name="Ryan Neufeld's - Original Prusa i3 MK2" version="2016-11-18 19:17:39" app="S3D-Software 3.1.1">
   <baseProfile>Prusa Mendel (modified)</baseProfile>
   <printMaterial>PET</printMaterial>
-  <printQuality>NORMAL 0.2mm</printQuality>
+  <printQuality>DETAIL 0.1mm</printQuality>
   <printExtruders></printExtruders>
   <extruder name="Primary Extruder">
     <toolheadNumber>0</toolheadNumber>
     <diameter>0.4</diameter>
     <autoWidth>0</autoWidth>
-    <width>0.43</width>
+    <width>0.4</width>
     <extrusionMultiplier>1</extrusionMultiplier>
     <useRetract>1</useRetract>
-    <retractionDistance>1.5</retractionDistance>
+    <retractionDistance>0.8</retractionDistance>
     <extraRestartDistance>0</extraRestartDistance>
     <retractionZLift>0</retractionZLift>
     <retractionSpeed>1800</retractionSpeed>
@@ -21,10 +21,10 @@
     <wipeDistance>2</wipeDistance>
   </extruder>
   <primaryExtruder>0</primaryExtruder>
-  <layerHeight>0.2</layerHeight>
-  <topSolidLayers>3</topSolidLayers>
-  <bottomSolidLayers>3</bottomSolidLayers>
-  <perimeterOutlines>3</perimeterOutlines>
+  <layerHeight>0.1</layerHeight>
+  <topSolidLayers>4</topSolidLayers>
+  <bottomSolidLayers>4</bottomSolidLayers>
+  <perimeterOutlines>4</perimeterOutlines>
   <printPerimetersInsideOut>1</printPerimetersInsideOut>
   <startPointOption>3</startPointOption>
   <startPointOriginX>0</startPointOriginX>
@@ -32,8 +32,8 @@
   <startPointOriginZ>0</startPointOriginZ>
   <sequentialIslands>0</sequentialIslands>
   <spiralVaseMode>0</spiralVaseMode>
-  <firstLayerHeightPercentage>100</firstLayerHeightPercentage>
-  <firstLayerWidthPercentage>95</firstLayerWidthPercentage>
+  <firstLayerHeightPercentage>150</firstLayerHeightPercentage>
+  <firstLayerWidthPercentage>100</firstLayerWidthPercentage>
   <firstLayerUnderspeed>0.3</firstLayerUnderspeed>
   <useRaft>0</useRaft>
   <raftExtruder>0</raftExtruder>
@@ -61,7 +61,7 @@
   <oozeShieldSpeedMultiplier>1</oozeShieldSpeedMultiplier>
   <infillExtruder>0</infillExtruder>
   <internalInfillPattern>Rectilinear</internalInfillPattern>
-  <externalInfillPattern>Rectilinear</externalInfillPattern>
+  <externalInfillPattern>Concentric</externalInfillPattern>
   <infillPercentage>10</infillPercentage>
   <outlineOverlapPercentage>20</outlineOverlapPercentage>
   <infillExtrusionWidthPercentage>100</infillExtrusionWidthPercentage>
@@ -69,7 +69,7 @@
   <infillLayerInterval>1</infillLayerInterval>
   <infillAngles>45,-45</infillAngles>
   <overlapInfillAngles>0</overlapInfillAngles>
-  <generateSupport>0</generateSupport>
+  <generateSupport>1</generateSupport>
   <supportExtruder>0</supportExtruder>
   <supportInfillPercentage>30</supportInfillPercentage>
   <supportExtraInflation>1.4</supportExtraInflation>
@@ -144,7 +144,7 @@
   <baudRateOverride>250000</baudRateOverride>
   <overridePrinterModels>1</overridePrinterModels>
   <printerModelsOverride>Heatbed-MK42.stl</printerModelsOverride>
-  <startingGcode>M115 U3.0.9 ; tell the printer latest firmware varsion available,M115 U3.0.9 ; tell the printer latest firmware varsion available,M301 P24.54 I2.07 D72.87,M304 P98.32 I4.04 D598.06,M104 S[extruder0_temperature] T0 ; this will take the layer 1 temperature for extruder 0,M140 S[bed1_temperature] ; this will take the layer 1 temperature for bed 0,M190 S[bed1_temperature] ; this will take the layer 1 temperature for bed 0,M109 S[extruder0_temperature] T0 ; this will take the layer 1 temperature for extruder 0,G28 W ; home all without mesh bed level,G80 ; mesh bed leveling,G1 Y-3.0 F1000.0 ; go outside printing area,G1 X60.0 E9.0 F1000.0 ; intro line,G1 X100.0 E12.5 F1000.0 ; intro line</startingGcode>
+  <startingGcode>M115 U3.0.9 ; tell the printer latest firmware varsion available,M301 P24.54 I2.07 D72.87,M304 P98.32 I4.04 D598.06,M104 S[extruder0_temperature] T0 ; this will take the layer 1 temperature for extruder 0,M140 S[bed1_temperature] ; this will take the layer 1 temperature for bed 0,M190 S[bed1_temperature] ; this will take the layer 1 temperature for bed 0,M109 S[extruder0_temperature] T0 ; this will take the layer 1 temperature for extruder 0,G28 W ; home all without mesh bed level,G80 ; mesh bed leveling,G1 Y-3.0 F1000.0 ; go outside printing area,G1 X60.0 E9.0 F1000.0 ; intro line,G1 X100.0 E12.5 F1000.0 ; intro line</startingGcode>
   <layerChangeGcode></layerChangeGcode>
   <retractionGcode></retractionGcode>
   <toolChangeGcode></toolChangeGcode>
@@ -273,7 +273,7 @@
     <firstLayerWidthPercentage>100</firstLayerWidthPercentage>
     <topSolidLayers>4</topSolidLayers>
     <bottomSolidLayers>4</bottomSolidLayers>
-    <perimeterOutlines>3</perimeterOutlines>
+    <perimeterOutlines>4</perimeterOutlines>
     <outlineUnderspeed>0.8</outlineUnderspeed>
     <extruder name="Primary Extruder">
       <toolheadNumber>0</toolheadNumber>
@@ -295,8 +295,8 @@
   <autoConfigureQuality name="NORMAL 0.2mm">
     <layerHeight>0.2</layerHeight>
     <infillPercentage>10</infillPercentage>
-    <firstLayerHeightPercentage>100</firstLayerHeightPercentage>
-    <firstLayerWidthPercentage>95</firstLayerWidthPercentage>
+    <firstLayerHeightPercentage>95</firstLayerHeightPercentage>
+    <firstLayerWidthPercentage>100</firstLayerWidthPercentage>
     <topSolidLayers>3</topSolidLayers>
     <bottomSolidLayers>3</bottomSolidLayers>
     <perimeterOutlines>3</perimeterOutlines>
@@ -305,8 +305,8 @@
       <toolheadNumber>0</toolheadNumber>
       <diameter>0.4</diameter>
       <autoWidth>0</autoWidth>
-      <width>0.43</width>
-      <extrusionMultiplier>1</extrusionMultiplier>
+      <width>0.45</width>
+      <extrusionMultiplier>1.15</extrusionMultiplier>
       <useRetract>1</useRetract>
       <retractionDistance>1.5</retractionDistance>
       <extraRestartDistance>0</extraRestartDistance>
